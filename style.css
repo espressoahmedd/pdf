@@ -1,0 +1,328 @@
+/* ===== الأنماط العامة ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.8;
+    color: #000;
+    background-color: #f0f0f0;
+    direction: rtl;
+    text-align: right;
+    padding: 20px;
+}
+
+/* ===== نمط الصفحة ===== */
+.page {
+    width: 21cm;
+    background: white;
+    margin: 0 auto 20px;
+    padding: 2.5cm 2cm;
+    position: relative;
+    page-break-after: always;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* ===== الخطوط الفاصلة للصفحة ===== */
+.page-top-line {
+    position: absolute;
+    top: 1cm;
+    right: 2cm;
+    left: 2cm;
+    border-top: 3px double #2c5aa0;
+    padding-top: 10px;
+}
+
+.page-bottom-line {
+    position: absolute;
+    bottom: 1cm;
+    right: 2cm;
+    left: 2cm;
+    border-bottom: 3px double #2c5aa0;
+    padding-bottom: 10px;
+}
+
+/* ===== رأس الصفحة ===== */
+.page-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #2c5aa0;
+}
+
+.page-header h1 {
+    color: #2c5aa0;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.page-header .session-title {
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+/* ===== جدول الفهرس ===== */
+.index-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0 35px 0;
+    font-size: 16px;
+    border: 2px solid #2c5aa0;
+    page-break-inside: avoid;
+}
+
+.index-table th {
+    background-color: #2c5aa0;
+    color: white;
+    padding: 12px 6px;
+    text-align: center;
+    border: 1px solid #1a4a8a;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.index-table td {
+    padding: 10px 6px;
+    border: 1px solid #2c5aa0;
+    vertical-align: top;
+    background-color: #f9f9f9;
+}
+
+/* ===== محتوى الجلسة ===== */
+.session-content {
+    margin-top: 25px;
+    font-size: 18px;
+    line-height: 1.9;
+    page-break-inside: auto;
+}
+
+.session-content h2 {
+    color: #2c5aa0;
+    border-right: 4px solid #2c5aa0;
+    padding-right: 12px;
+    margin: 20px 0 15px;
+    font-size: 21px;
+    page-break-after: avoid;
+}
+
+.session-content h3 {
+    color: #1a5f7a;
+    margin: 18px 0 12px;
+    font-size: 19px;
+    page-break-after: avoid;
+}
+
+.session-content p {
+    margin-bottom: 15px;
+    text-align: justify;
+    page-break-inside: avoid;
+}
+
+.session-content ul, .session-content ol {
+    margin-right: 25px;
+    margin-bottom: 18px;
+    page-break-inside: avoid;
+}
+
+.session-content li {
+    margin-bottom: 8px;
+    page-break-inside: avoid;
+}
+
+/* ===== الصور ===== */
+.content-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 25px auto;
+    border: 2px solid #2c5aa0;
+    border-radius: 5px;
+    page-break-inside: avoid;
+}
+
+.image-caption {
+    text-align: center;
+    font-style: italic;
+    color: #666;
+    margin-top: 8px;
+    font-size: 16px;
+    margin-bottom: 25px;
+    page-break-before: avoid;
+}
+
+/* ===== الأنشطة ===== */
+.activity-box {
+    background-color: #f0f7ff;
+    border: 1px solid #a3c4ff;
+    padding: 20px;
+    margin: 25px 0;
+    border-radius: 8px;
+    page-break-inside: avoid;
+}
+
+.activity-title {
+    color: #2c5aa0;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 19px;
+}
+
+/* ===== التذييل ===== */
+.page-footer {
+    position: absolute;
+    bottom: 1.5cm;
+    right: 2cm;
+    left: 2cm;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.page-number {
+    position: absolute;
+    bottom: 1.5cm;
+    left: 2cm;
+    font-size: 14px;
+    color: #2c5aa0;
+    font-weight: bold;
+}
+
+/* ===== نصوص خاصة ===== */
+.important {
+    color: #d63031;
+    font-weight: bold;
+}
+
+.highlight {
+    background-color: #fffacd;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.note {
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 5px;
+    color: #856404;
+    page-break-inside: avoid;
+}
+
+/* ===== محاذاة النص ===== */
+.text-center {
+    text-align: center;
+}
+
+/* ===== الجداول داخل المحتوى ===== */
+.content-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    page-break-inside: avoid;
+}
+
+.content-table th {
+    background-color: #2c5aa0;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
+    font-weight: bold;
+}
+
+.content-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: right;
+    color: #000;
+}
+
+.content-table td[style*="background-color"] {
+    color: #000 !important;
+}
+
+/* ===== نمط النقاط للتقييم ===== */
+.rating-dot {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 2px;
+    border-radius: 50%;
+    border: 1px solid #2c5aa0;
+    text-align: center;
+    line-height: 18px;
+    font-size: 12px;
+    color: #2c5aa0;
+}
+
+/* ===== الجدول النهائي للتقييم ===== */
+.final-evaluation th {
+    background-color: #2c5aa0;
+    color: white;
+}
+
+.final-evaluation td {
+    background-color: #f9f9f9;
+    color: #000;
+}
+
+.final-evaluation td:last-child {
+    color: #2c5aa0;
+    font-weight: bold;
+}
+
+/* ===== التحكم في فواصل الصفحات ===== */
+.page-break-control {
+    page-break-before: always;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+
+/* ===== منع التداخل ===== */
+.session-content > * {
+    page-break-inside: avoid;
+}
+
+/* ===== إصلاح الألوان للعرض ===== */
+.content-table tr td[style*="background-color: #f0f7ff"] {
+    background-color: #f0f7ff;
+    color: #000000;
+}
+
+.content-table tr td[style*="background-color: #f0f7ff"] strong {
+    color: #000000;
+}
+
+/* ===== الترميز للأجهزة الصغيرة ===== */
+@media screen and (max-width: 1200px) {
+    .page {
+        width: 100%;
+        padding: 2cm 1.5cm;
+    }
+    
+    .index-table {
+        font-size: 14px;
+    }
+    
+    .index-table th {
+        font-size: 14px;
+        padding: 8px 4px;
+    }
+}
+
+/* ===== الطباعة المسبقة ===== */
+@media screen {
+    .page {
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+}
